@@ -592,9 +592,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 //    → copy Template ID
 // 4. Go to Account → API Keys → copy Public Key
 // 5. Replace the three values below:
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← replace
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // ← replace
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // ← replace
+const EMAILJS_PUBLIC_KEY  = 'V5gOKxuBXZtvJ7Xcy';
+const EMAILJS_SERVICE_ID  = 'service_z2qmurj';
+const EMAILJS_TEMPLATE_ID = 'template_v4fjk7a';
 
 (function(){
   if(EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY'){
@@ -627,11 +627,10 @@ function sendEmail(){
   btn.textContent = 'Sending...';
 
   emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-    from_name:  name,
-    from_email: email,
-    subject:    subject,
-    message:    message,
-    to_email:   'josmernicolasperalta@gmail.com'
+    name:    name,
+    email:   email,
+    title:   subject,
+    message: message
   }).then(()=>{
     document.getElementById('msgOk').style.display='block';
     document.getElementById('msgErr').style.display='none';
